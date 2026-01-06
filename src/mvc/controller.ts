@@ -31,15 +31,23 @@ export abstract class Controller {
 		return (acceptHeader ?? []).filter(requested => requested === mime).length > 0
 	}
 
+	async renderData(model: PageModel): Promise<string> {
+		if(!this.context) {
+			throw new ServerError('Context not set')
+		}
+
+		this.context.response.headers.set('Content-Type', 'application/json')
+
+		return JSON.stringify(model.toJson())
+	}
+
 	async render(template: string, model: PageModel): Promise<string> {
 		if(!this.context) {
 			throw new ServerError('Context not set')
 		}
 
 		if(this.isJsonRequest) {
-			this.context.response.headers.set('Content-Type', 'application/json')
-
-			return JSON.stringify(model.toJson())
+			return this.renderData(model)
 		}
 
 		const urlModel = new PageModel({

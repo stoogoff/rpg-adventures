@@ -1,6 +1,6 @@
 
 import { Context, Router } from '@oak/oak'
-import { route, Controller, PageModel, View } from '~/mvc/index.ts'
+import { route, PageModel, View } from '~/mvc/index.ts'
 import { AdventureModel } from '../models/index.ts'
 import { CoreController } from './core-controller.ts'
 

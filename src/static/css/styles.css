@@ -50,6 +50,15 @@ dl {
 	grid-template-columns: var(--definition-width) auto;
 }
 
+/* Default icon size */
+.icon {
+	display: inline-block;
+	width: 1.5rem;
+	height: 1.5rem;
+	vertical-align: middle;
+	margin: var(--spacing-1);
+}
+
 /* Primary grid container with a small left-hand column and a large central column */
 .container {
 	display: grid;
@@ -91,7 +100,6 @@ dl {
 
 /* Site header */
 header {
-	padding: var(--spacing-4);
 	background-color: var(--zinc-900);
 	border-bottom: 2px solid var(--zinc-950);
 	box-shadow: var(--shadow-lg);
@@ -99,14 +107,38 @@ header {
 	width: 100vw;
 
 	span a {
+		display: inline-block;
+		padding: var(--spacing-4);
 		font-family: var(--font-heading);
 		font-weight: bold;
 		font-size: 1.5rem;
 		color: var(--zinc-300);
+		position: relative;
+		top: var(--spacing-1);
 
 		&:hover {
 			color: var(--zinc-100);
 			text-decoration: none;
+		}
+	}
+}
+
+/* Global search */
+search {
+	padding: var(--spacing-4) 0;
+	color: var(--zinc-300);
+
+	input {
+		padding: var(--spacing-1) var(--spacing-2);
+		min-width: 30rem;
+		background-color: var(--tertiary-bg);
+		color: var(--tertiary-text);
+		border: 1px solid var(--tertiary-border);
+		border-radius: 1rem;
+		font-size: 1.1rem;
+
+		&:focus {
+			outline: 2px solid var(--link-text);
 		}
 	}
 }
