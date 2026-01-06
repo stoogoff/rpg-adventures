@@ -84,12 +84,12 @@ export class SiteModel extends MetadataModel {
 
 	override async toRaw() {
 		const model = await super.toRaw()
+		const methods = ['imagePath', 'isActiveNav']
 
-		//@ts-ignore
-		model.imagePath = this.imagePath.bind(this)
-
-		//@ts-ignore
-		model.isActiveNav = this.isActiveNav.bind(this)
+		methods.forEach(method => {
+			//@ts-ignore
+			model[method] = this[method].bind(this)
+		})
 
 		return model
 	}

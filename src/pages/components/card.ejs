@@ -1,7 +1,7 @@
 <div class="card">
 	<h3><a href="<%= it.card.slug %>"><%= it.card.title %></a></h3>
 	<div class="card-content">
-		<%~ it.card.summary %>
+		<%~ it.format(it.card.summary, 200) %>
 	</div>
 	<div class="card-footer"><a href="<%= it.card.slug %>">more &raquo;</a></div>
 </div>

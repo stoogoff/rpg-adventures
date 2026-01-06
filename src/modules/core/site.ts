@@ -1,5 +1,6 @@
 
 import { SiteModel, SiteMetadata } from '~/mvc/index.ts'
+import { format } from '~/utils/string.ts'
 import { AdventuresService, CampaignsService, SystemsService } from './services/index.ts'
 import { LinkModel } from './models/index.ts'
 
@@ -32,6 +33,18 @@ export class CustomSiteModel extends SiteModel {
 		return list.map(item => LinkModel.fromDb(item))
 	}
 
+	format(input: string, length: number | null = null): string {
+		if(length === null || input.length <= length) {
+			return format(input)
+		}
+
+		while(/[a-zA-Z-]/.test(input[length])) {
+			length--
+		}
+
+		return format(input.substring(0, length) + '&hellip;').replace(/[*_`]+/g, '')
+	}
+
 	override async toRaw() {
 		const model = await super.toRaw()
 
@@ -41,6 +54,8 @@ export class CustomSiteModel extends SiteModel {
 		model.campaigns = await this.campaigns()
 		//@ts-ignore
 		model.systems = await this.systems()
+
+		model.format = this.format
 
 		return model
 	}

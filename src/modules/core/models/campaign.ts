@@ -1,6 +1,5 @@
 
 import { CouchId, CouchRecord } from '~/mvc/index.ts'
-import { format } from '~/utils/string.ts'
 import { Adventure, AdventureModel } from './adventure.ts'
 import { System, SystemModel } from './system.ts'
 
@@ -24,7 +23,7 @@ export class CampaignModel {
 
     model.slug = id.toSlug()
     model.title = input.title
-    model.summary = format(input.summary)
+    model.summary = input.summary
     model.adventures = adventures.map(adv => AdventureModel.fromDb(adv))
 
     if(system) {
