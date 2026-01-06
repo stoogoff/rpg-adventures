@@ -45,16 +45,12 @@ export class CustomSiteModel extends SiteModel {
 		return format(input.substring(0, length) + '&hellip;').replace(/[*_`]+/g, '')
 	}
 
-	override async toRaw() {
+	override async toRaw(): Promise<Record<string, any>> {
 		const model = await super.toRaw()
 
-		//@ts-ignore
 		model.adventures = await this.adventures()
-		//@ts-ignore
 		model.campaigns = await this.campaigns()
-		//@ts-ignore
 		model.systems = await this.systems()
-
 		model.format = this.format
 
 		return model

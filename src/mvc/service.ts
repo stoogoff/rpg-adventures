@@ -14,7 +14,7 @@ export class Service<T extends CouchRecord> {
 	async byIds(ids: string[]): Promise<T[]> {
 		const couchIds = ids.map(id => new CouchId(this.prefix, id).toString())
 		const all = await this.all()
-		const result = []
+		const result: T[] = []
 
 		all.forEach(item => {
 			const index =  couchIds.indexOf(item._id)

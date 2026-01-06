@@ -4,4 +4,4 @@ import { markedSmartypants } from 'marked-smartypants'
 
 marked.use(markedSmartypants())
 
-export const format = (input: string): string => marked.parse(input)
+export const format = (input: string): string => marked.parse(input) as string

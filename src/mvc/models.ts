@@ -46,7 +46,7 @@ export class MetadataModel {
 		return this
 	}
 
-	async toRaw() {
+	async toRaw(): Promise<Record<string, any>> {
 		const model = {
 			title: this.title,
 			description: this.description,
@@ -82,7 +82,7 @@ export class SiteModel extends MetadataModel {
 		return url.href === this.url
 	}
 
-	override async toRaw() {
+	override async toRaw(): Promise<Record<string, any>> {
 		const model = await super.toRaw()
 		const methods = ['imagePath', 'isActiveNav']
 
