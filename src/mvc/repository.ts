@@ -54,6 +54,12 @@ export class CouchId {
 	}
 }
 
+export interface CouchDesignDocResponse {
+	total_rows: number;
+	offset: number;
+	rows: any[];
+}
+
 export class Repository {
 	private authHeader: string;
 
@@ -84,6 +90,18 @@ export class Repository {
 
 		if('error' in item) {
 			throw new NotFoundError(`item '${id}' not found`)
+		}
+
+		return item
+	}
+
+	async getView(designDoc: string, view: string): Promise<CouchDesignDocResponse> {
+		const path = `/_design/${designDoc}/_view/${view}`
+		const response = await this.fetch(path)
+		const item = await response.json()
+
+		if('error' in item) {
+			throw new NotFoundError(`design doc ${path} not found`)
 		}
 
 		return item

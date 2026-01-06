@@ -1,18 +1,10 @@
 
 import { Context, Router } from '@oak/oak'
 import { route, Controller, PageModel, View } from '~/mvc/index.ts'
-import { AdventuresService, SystemsService } from '../services/index.ts'
 import { AdventureModel } from '../models/index.ts'
+import { CoreController } from './core-controller.ts'
 
-export class AdventuresController extends Controller {
-	constructor(
-		private adventures: AdventuresService,
-		private systems: SystemsService,
-		view: View
-	) {
-		super(view)
-	}
-
+export class AdventuresController extends CoreController {
 	@route('/adventures')
 	async list() {
 		const list = await this.adventures.all()
@@ -31,11 +23,12 @@ export class AdventuresController extends Controller {
 			const id = this.context?.params.adventure
 			const item = await this.adventures.byId(id)
 			const system = await this.systems.byId(item.system)
+			const campaign = await this.campaigns.forAdventure(item._id)
 
 			return await this.render('adventures/item', new PageModel({
 					title: item.title + ' | ',
 				},
-				AdventureModel.fromDb(item, system),
+				AdventureModel.fromDb(item, system, campaign),
 			))
 		}
 		catch(error) {

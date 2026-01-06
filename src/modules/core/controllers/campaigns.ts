@@ -1,18 +1,10 @@
 
 import { Context, Router } from '@oak/oak'
 import { route, Controller, PageModel, View } from '~/mvc/index.ts'
-import { AdventuresService, CampaignsService, SystemsService } from '../services/index.ts'
 import { CampaignModel } from '../models/index.ts'
+import { CoreController } from './core-controller.ts'
 
-export class CampaignsController extends Controller {
-	constructor(
-		private campaigns: CampaignsService,
-		private systems: SystemsService,
-		private adventures: AdventuresService,
-		view: View) {
-		super(view)
-	}
-
+export class CampaignsController extends CoreController {
 	@route('/campaigns')
 	async list() {
 		const list = await this.campaigns.all()

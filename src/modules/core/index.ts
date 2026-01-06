@@ -28,8 +28,8 @@ export const register = (repo: Repository) => {
 
 	// controllers
 	const home = new HomeController(view)
-	const adventures = new AdventuresController(adventuresService, systemsService, view)
-	const campaigns = new CampaignsController(campaignsService, systemsService, adventuresService, view)
+	const adventures = new AdventuresController(adventuresService, campaignsService, systemsService, view)
+	const campaigns = new CampaignsController(adventuresService, campaignsService, systemsService, view)
 	const systems = new SystemsController(systemsService, adventuresService, view)
 
 	return view
