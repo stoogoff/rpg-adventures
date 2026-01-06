@@ -1,0 +1,11 @@
+<% layout('../layouts/main') %>
+
+<h1>Systems</h1>
+
+<section class="grid">
+	<% it.data.forEach(card => { %>
+		<%~ include('../components/card', {
+			card,
+		}) %>
+	<% }) %>
+</section>

@@ -1,0 +1,7 @@
+<h1><%= it.menu.title %></h1>
+<menu>
+	<% it.menu.items.forEach(item => { %>
+		<li<%~ it.isActiveNav(item.slug) ? ' class="active"' : '' %>><a href="<%= item.slug %>"><%= item.title %></a></li>
+	<% }) %>
+	<li class="more"><a href="<%= it.menu.url %>" class="link">more &raquo;</a></li>
+</menu>

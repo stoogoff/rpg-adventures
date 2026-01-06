@@ -1,0 +1,17 @@
+<% layout('../layouts/main') %>
+
+<h1><%= it.data.title %></h1>
+<%~ it.data.summary %>
+
+<h2>Adventures</h2>
+<% if(it.data.adventures.length) { %>
+<section class="grid">
+	<% it.data.adventures.forEach(card => { %>
+		<%~ include('../components/card', {
+			card,
+		}) %>
+	<% }) %>
+</section>
+<% } else { %>
+	<p>No adventures have been created for <em><%= it.data.title %></em> just yet.</p>
+<% } %>

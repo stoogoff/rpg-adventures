@@ -1,0 +1,9 @@
+<% layout('../layouts/main') %>
+
+<h1>Adventures</h1>
+
+<ul>
+	<% it.data.forEach(item => { %>
+		<li><a href="<%= item.slug %>"><%= item.title %></a></li>
+	<% }) %>
+</ul>

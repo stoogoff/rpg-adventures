@@ -1,0 +1,36 @@
+
+import { Config } from '~/config.ts'
+import { Repository, SiteModel, View } from '~/mvc/index.ts'
+import {
+	AdventuresController,
+	CampaignsController,
+	HomeController,
+	SystemsController
+} from './controllers/index.ts'
+import { AdventuresService, CampaignsService, SystemsService } from './services/index.ts'
+import { CustomSiteModel } from './site.ts'
+
+export const register = (repo: Repository) => {
+	// services
+	const adventuresService = new AdventuresService(repo)
+	const campaignsService = new CampaignsService(repo)
+	const systemsService = new SystemsService(repo)
+
+	// base model
+	const model = new CustomSiteModel({
+		url: new URL('https://tools.we-evolve.co.uk/adventures'),
+		title: 'RPG Adventures',
+		type: 'website'
+	}, Config.imagePath, adventuresService, campaignsService, systemsService)
+
+	// view
+	const view = new View(`${Deno.cwd()}${Config.templatePath}`, model)
+
+	// controllers
+	const home = new HomeController(view)
+	const adventures = new AdventuresController(adventuresService, systemsService, view)
+	const campaigns = new CampaignsController(campaignsService, systemsService, adventuresService, view)
+	const systems = new SystemsController(systemsService, adventuresService, view)
+
+	return view
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title><%= it.title %></title>
+<meta name="description" content="<%= it.description %>" />
+
+<link rel="preconnect" href="https://fonts.bunny.net" />
+<link href="https://fonts.bunny.net/css?family=crimson-text:600|lato:400,700" rel="stylesheet" />
+<link rel="stylesheet" href="/css/styles.css" />
+
+<meta property="og:title" content="<%= it.title %>" />
+<meta property="og:type" content="<%= it.type %>" />
+<meta property="og:url" content="<%= it.url %>" />
+<meta property="og:image" content="<%= it.image %>" />
+<meta property="og:image:alt" content="<%= it.title %>" />
+
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" href="/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/icon.png" />
+</head>
+<body>
+
+<header class="container">
+	<span><a href="/">RPG Adventures</a></span>
+	<search>
+		<form>
+			<input type="search" />
+		</form>
+	</search>
+</header>
+
+<div id="content" class="container">
+	<nav id="primary">
+		<%~ include('../components/menu', {
+			menu: {
+				title: 'System',
+				url: '/systems',
+				items: it.systems,
+			}
+		}) %>
+		<%~ include('../components/menu', {
+			menu: {
+				title: 'Campaign',
+				url: '/campaigns',
+				items: it.campaigns,
+			}
+		}) %>
+		<%~ include('../components/menu', {
+			menu: {
+				title: 'Adventure',
+				url: '/adventures',
+				items: it.adventures,
+			}
+		}) %>
+	</nav>
+	<main><%~ it.body %></main>
+</div>
+
+</body>
+</html>

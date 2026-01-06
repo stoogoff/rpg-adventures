@@ -1,0 +1,14 @@
+<% layout('../layouts/main') %>
+
+<h1><%= it.data.title %></h1>
+<p><%~ it.data.summary %></p>
+
+<h2>Adventures</h2>
+<section class="grid">
+	<% it.data.adventures.forEach(card => { %>
+		<%~ include('../components/card', {
+			card,
+		}) %>
+	<% }) %>
+</section>
+

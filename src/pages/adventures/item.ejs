@@ -1,0 +1,18 @@
+<% layout('../layouts/main') %>
+
+<h1><%= it.data.title %></h1>
+
+<dl>
+	<dt>System:</dt>
+	<dd><a href="<%= it.data.system.slug %>"><%= it.data.system.title %></a></dd>
+	<% if(it.data.campaign) { %>
+		<dt>Campaign:</dt>
+		<dd><a href="<%= it.data.campaign.slug %>"><%= it.data.campaign.title %></a></dd>
+	<% } %>
+	<dt>Setting:</dt>
+	<dd><%= it.data.setting %></dd>
+	<dt>Source:</dt>
+	<dd><%= it.data.source %></dd>
+</dl>
+
+<%~ it.data.summary %>
