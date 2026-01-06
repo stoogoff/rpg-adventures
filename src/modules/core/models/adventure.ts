@@ -1,6 +1,6 @@
 
-import { marked } from 'marked'
 import { CouchId, CouchRecord } from '~/mvc/index.ts'
+import { format } from '~/utils/string.ts'
 import { System, SystemModel } from './system.ts'
 import { Campaign, CampaignModel } from './campaign.ts'
 
@@ -27,7 +27,7 @@ export class AdventureModel {
 
 		model.slug = id.toSlug()
 		model.title = input.title
-		model.summary = marked(input.summary)
+		model.summary = format(input.summary)
 		model.setting = input.setting
 		model.source = input.source
 

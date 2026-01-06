@@ -18,6 +18,7 @@
 		"@bgub/eta": "jsr:@bgub/eta@^4.4.1",
 		"@oak/oak": "jsr:@oak/oak@^17.2.0",
 		"marked": "npm:marked@^15",
+		"marked-smartypants": "npm:marked-smartypants@1.1.11",
 		"~/": "./src/"
 	}
 }

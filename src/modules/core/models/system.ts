@@ -1,6 +1,6 @@
 
-import { marked } from 'marked'
 import { CouchId, CouchRecord } from '~/mvc/index.ts'
+import { format } from '~/utils/string.ts'
 import { Adventure, AdventureModel } from './adventure.ts'
 
 export interface System extends CouchRecord {
@@ -22,7 +22,7 @@ export class SystemModel {
 
 		model.slug = id.toSlug()
 		model.title = input.title
-		model.summary = marked(input.summary)
+		model.summary = format(input.summary)
 		model.publisher = input.publisher
 		model.adventures = adventures.map(adv => AdventureModel.fromDb(adv))
 
