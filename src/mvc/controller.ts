@@ -9,7 +9,7 @@ const controllers = new Map()
 export abstract class Controller {
 	protected context: Context | undefined;
 
-	constructor(private view: View) {}
+	constructor(private readonly view: View) {}
 
 	initialise(ctx: Context) {
 		this.context = ctx

@@ -78,7 +78,9 @@
 		--secondary-border: var(--zinc-950);
 
 		--tertiary-text: var(--zinc-300);
+		--tertiary-text-hover: var(--zinc-200);
 		--tertiary-bg: var(--zinc-700);
+		--tertiary-bg-hover: var(--zinc-600);
 		--tertiary-border: var(--zinc-500);
 
 		--link-text: var(--blue-400);
@@ -101,7 +103,9 @@
 		--secondary-border: var(--slate-400);
 
 		--tertiary-text: var(--slate-800);
+		--tertiary-text-hover: var(--slate-700);
 		--tertiary-bg: var(--slate-300);
+		--tertiary-bg-hover: var(--slate-100);
 		--tertiary-border: var(--slate-400);
 
 		--link-text: var(--blue-700);

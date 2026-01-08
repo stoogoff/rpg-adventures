@@ -1,7 +1,7 @@
 import { CouchId, CouchRecord, Repository } from './repository.ts'
 
 export class Service<T extends CouchRecord> {
-	constructor(protected repo: Repository, protected prefix: string) {}
+	constructor(protected readonly repo: Repository, protected readonly prefix: string) {}
 
 	async all(): Promise<T[]> {
 		return await this.repo.getAllByType(this.prefix)

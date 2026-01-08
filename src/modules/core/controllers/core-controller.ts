@@ -4,9 +4,9 @@ import { AdventuresService, CampaignsService, SystemsService } from '../services
 
 export class CoreController extends Controller {
 	constructor(
-		protected adventures: AdventuresService,
-		protected campaigns: CampaignsService,
-		protected systems: SystemsService,
+		protected readonly adventures: AdventuresService,
+		protected readonly campaigns: CampaignsService,
+		protected readonly systems: SystemsService,
 		view: View
 	) {
 		super(view)

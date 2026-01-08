@@ -6,7 +6,7 @@ import { PageModel, SiteModel } from './models.ts'
 export class View {
 	private renderer: Eta
 
-	constructor(private templatePath: string, private siteModel: SiteModel) {
+	constructor(private readonly templatePath: string, private readonly siteModel: SiteModel) {
 		this.renderer = new Eta({
 			views: templatePath,
 			cache: false,

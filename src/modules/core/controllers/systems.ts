@@ -5,7 +5,11 @@ import { AdventuresService, SystemsService } from '../services/index.ts'
 import { SystemModel } from '../models/index.ts'
 
 export class SystemsController extends Controller {
-	constructor(private systems: SystemsService, private adventures: AdventuresService, view: View) {
+	constructor(
+		private readonly systems: SystemsService,
+		private readonly adventures: AdventuresService,
+		view: View
+	) {
 		super(view)
 	}
 

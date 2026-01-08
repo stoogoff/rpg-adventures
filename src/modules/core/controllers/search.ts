@@ -4,7 +4,7 @@ import { route, Controller, PageModel, View } from '~/mvc/index.ts'
 import { SearchService } from '../services/index.ts'
 
 export class SearchController extends Controller {
-	constructor(private _search: SearchService, view: View) {
+	constructor(private readonly _search: SearchService, view: View) {
 		super(view)
 	}
 
