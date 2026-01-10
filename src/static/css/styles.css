@@ -151,7 +151,7 @@ search {
 		}
 	}
 
-	#results {
+	menu {
 		position: absolute;
 		background-color: var(--tertiary-bg);
 		color: var(--tertiary-text);

@@ -4,6 +4,8 @@ import { NotFoundError, ServerError } from './errors.ts'
 export interface CouchRecord {
 	_id: string;
 	_rev: string;
+	created: string;
+	modified: string;
 }
 
 export interface DbCredentials {
