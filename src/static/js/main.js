@@ -1,5 +1,5 @@
 
-import { directives } from './q/reactive/directives.js'
+import { directives } from 'https://cdn.we-evolve.co.uk/js/q/reactive/directives.js'
 import Search from './search.js'
 import { searchResults } from './store.js'
 

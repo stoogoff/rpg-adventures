@@ -1,5 +1,5 @@
 
-import { throttle } from './q/utils/timer.js'
+import { throttle } from 'https://cdn.we-evolve.co.uk/js/q/utils/timer.js'
 import { searchResults } from './store.js'
 
 export default {
@@ -16,12 +16,6 @@ export default {
 
 	searchHandler(input) {
 		const search = throttle(async input => {
-			input = input.trim()
-
-			if(input.length < 3 || input === this.data.lastSearch) return
-
-			this.data.lastSearch = input
-
 			const response = await fetch(`/search/${encodeURIComponent(input)}`, {
 				headers: {
 					'Content-Type': 'application/json'
@@ -31,10 +25,16 @@ export default {
 			const results = await response.json()
 
 			searchResults.empty()
-			searchResults.addItems(results)
+			searchResults.addRange(results)
 
 			this.data.hideResults = false
 		})
+
+		input = input.trim()
+
+		if(input.length < 3 || input === this.data.lastSearch) return
+
+		this.data.lastSearch = input
 
 		search(input)
 	},
