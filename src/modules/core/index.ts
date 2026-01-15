@@ -4,6 +4,7 @@ import { Repository, SiteModel, View } from '~/mvc/index.ts'
 import {
 	AdventuresController,
 	CampaignsController,
+	CharactersController,
 	HomeController,
 	SearchController,
 	SystemsController,
@@ -11,6 +12,7 @@ import {
 import {
 		AdventuresService,
 		CampaignsService,
+		CharactersService,
 		SearchService,
 		SystemsService,
 } from './services/index.ts'
@@ -20,6 +22,7 @@ export const register = (repo: Repository) => {
 	// services
 	const adventuresService = new AdventuresService(repo)
 	const campaignsService = new CampaignsService(repo)
+	const charactersService = new CharactersService(repo)
 	const searchService = new SearchService(repo)
 	const systemsService = new SystemsService(repo)
 
@@ -37,6 +40,7 @@ export const register = (repo: Repository) => {
 	const home = new HomeController(view)
 	const adventures = new AdventuresController(adventuresService, campaignsService, systemsService, view)
 	const campaigns = new CampaignsController(adventuresService, campaignsService, systemsService, view)
+	const characters = new CharactersController(charactersService, adventuresService, view)
 	const search = new SearchController(searchService, view)
 	const systems = new SystemsController(systemsService, adventuresService, view)
 
