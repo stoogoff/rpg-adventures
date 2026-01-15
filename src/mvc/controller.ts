@@ -4,8 +4,6 @@ import { HttpError, ServerError } from './errors.ts'
 import { PageModel } from './models.ts'
 import { View } from './view.ts'
 
-const controllers = new Map()
-
 export abstract class Controller {
 	protected context: Context | undefined;
 
@@ -31,7 +29,7 @@ export abstract class Controller {
 		return (acceptHeader ?? []).filter(requested => requested === mime).length > 0
 	}
 
-	async renderData(model: PageModel): Promise<string> {
+	renderData(model: PageModel): string {
 		if(!this.context) {
 			throw new ServerError('Context not set')
 		}
@@ -67,8 +65,7 @@ export abstract class Controller {
 			httpError = new ServerError()
 		}
 
-		//@ts-ignore
-		this.context.response.status = httpError.status
+		this.context!.response.status = httpError.status
 			
 		if(this.isJsonRequest) {
 			this.context?.response.headers.set('Content-Type', 'application/json')

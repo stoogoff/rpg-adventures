@@ -1,6 +1,5 @@
 
-import { Context, Router } from '@oak/oak'
-import { route, PageModel, View } from '~/mvc/index.ts'
+import { route, PageModel } from '~/mvc/index.ts'
 import { AdventureModel } from '../models/index.ts'
 import { CoreController } from './core-controller.ts'
 
@@ -19,7 +18,7 @@ export class AdventuresController extends CoreController {
 	@route('/adventures/:adventure')
 	async byId() {
 		try {
-			//@ts-ignore
+			// @ts-ignore params does exist
 			const id = this.context?.params.adventure
 			const item = await this.adventures.byId(id)
 			const system = await this.systems.byId(item.system)

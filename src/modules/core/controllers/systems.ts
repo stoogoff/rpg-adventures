@@ -1,5 +1,4 @@
 
-import { Context, Router } from '@oak/oak'
 import { route, Controller, PageModel, View } from '~/mvc/index.ts'
 import { AdventuresService, SystemsService } from '../services/index.ts'
 import { SystemModel } from '../models/index.ts'
@@ -27,7 +26,7 @@ export class SystemsController extends Controller {
 	@route('/systems/:system')
 	async byId() {
 		try {
-			//@ts-ignore
+			// @ts-ignore params does exist
 			const id = this.context?.params.system
 			const item = await this.systems.byId(id)
 			const adventures = await this.adventures.forSystem(id)

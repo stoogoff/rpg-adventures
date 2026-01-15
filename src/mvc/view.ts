@@ -28,7 +28,7 @@ export class View {
 		try {
 			return await this.renderTemplate(file || 'index')
 		}
-		catch(error) {
+		catch(_error) {
 			ctx.response.status = 404
 
 			return await this.renderTemplate('404')

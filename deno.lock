@@ -106,6 +106,32 @@
       "integrity": "sha512-t5Fy/nfn+14LuOc2KNYg75vZqClpAiqscVvMygNnlsHBFpSXdJaYtXMcdNLpl/Qvc3P2cB3s6lOV51nqsFq4ag=="
     }
   },
+  "remote": {
+    "https://cdn.we-evolve.co.uk/js/q/data/index.js": "7b9127a8e6f7e3351e9b8f879b4e51a1142a7e345eb614f262b9508821e498b4",
+    "https://cdn.we-evolve.co.uk/js/q/data/list-store.js": "fcaae0360ea78423ac0e42c6ed244f0b7b6fe5c4c4a5de96de77e92e325faff6",
+    "https://cdn.we-evolve.co.uk/js/q/data/model.js": "806e94c145dca1837de738bcffd75dbee42e581d4e1fca9dada96056e022a96c",
+    "https://cdn.we-evolve.co.uk/js/q/data/proxy.js": "5ff5aaaf90cee895d7198d4192f0967cc8c7331547d8bd3e6333e1621ed28cd4",
+    "https://cdn.we-evolve.co.uk/js/q/data/set-store.js": "9081eafb09ea813da06682b94a27255a1991d26f80dff6464dfc5e1b05681c5c",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/component.js": "4cd1b3e487117c87e3fc935290025c6f7d5ad4d2678a6eb070aef26991c56ece",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/config.js": "a4e6454b5e4d1cf45dc26f1885b60de800841a96d579c673e8631a8b2e56b5e4",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/context.js": "7e1d558b97ade81bd09074f581c1a62a3f9224be75237847543e0509aae83deb",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/directives.js": "d17afca142fc8729b4c99e26901d0b5eff1aa0179ec47831ad8376f03c96afda",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/directives/attribute.js": "459a0a852936a41c1ded4e618c366848932adf1d78f558091964566a86878301",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/directives/boolean.js": "1a54da305b1fdf1f71459e670e882feeecf4889287bb4602b3d62897c482e1be",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/directives/component.js": "f1c936f4de44868f8942066778576bf369d8cfdcfefa63748aad7411a4334b79",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/directives/each.js": "ea189e2074f36acabb6a5727443af2ac52e131f38c6bcd0bf1b6dc23727402fe",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/directives/event.js": "7af5e5ad6db1eccf1178c8315ffb9a459689fe8a7b0be12506812e45f54afe15",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/directives/include.js": "d0777238c8b0a7c618fab46d73b17929d81281c5f04cfb0fb82a195d628c47ed",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/directives/index.js": "27b5b673c0b901e44f5e8f0a71f025d5b52727892761dd74c6ad68ee7165b80b",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/directives/input.js": "198afea959645bb193f116ae54127fde93f522dfabed8f91d4e40e4db73852cc",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/directives/store.js": "9355b4cc0de5d1da66980060361798144bc75f169a6c123738b65e415c61ea07",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/directives/template.js": "598951f24f990104713e798a5b9cac68c2e39cc13d44d862c9f38a94a44af0e5",
+    "https://cdn.we-evolve.co.uk/js/q/reactive/directives/text.js": "e950757f46f815ac207782e48f4ec5e577e9b4d172584891e2cc1bf83b668ec8",
+    "https://cdn.we-evolve.co.uk/js/q/utils/assert.js": "581c9556a494cd07572f0a53801f407563753c47e8378a0819ea947ac45f670b",
+    "https://cdn.we-evolve.co.uk/js/q/utils/emitter.js": "afe6617fb9b76fd250ef04f0fa797295418af07393899b4dcbe0bb3c9b9baeb5",
+    "https://cdn.we-evolve.co.uk/js/q/utils/logger.js": "9dcf56605f88b9d8a883edc1251db4d5d9087e5bb34e7885b58ccef2c213e7a9",
+    "https://cdn.we-evolve.co.uk/js/q/utils/timer.js": "e6789e9d7e366a96f5edd03abeac8f7de3de79a103bab7b8ec30f4f37e41ce96"
+  },
   "workspace": {
     "dependencies": [
       "jsr:@bgub/eta@^4.4.1",

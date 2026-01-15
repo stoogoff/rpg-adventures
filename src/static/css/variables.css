@@ -1,5 +1,12 @@
 
 :root {
+	/* Screen sizes */
+	--screen-xsmall:  0em;
+	--screen-small:  25em;
+	--screen-medium: 36em;
+	--screen-large:  55em;
+	--screen-xlarge: 75em;
+
 	/* Fonts */
 	--font-base: 'Lato', sans-serif;
 	--font-heading: 'Crimson Text', serif;

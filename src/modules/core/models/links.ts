@@ -1,5 +1,5 @@
 
-import { CouchId, CouchRecord } from '~/mvc/index.ts'
+import { CouchId } from '~/mvc/index.ts'
 
 export class LinkModel {
 	slug: string = ''

@@ -1,3 +1,4 @@
+
 import { encodeBase64 } from 'jsr:@std/encoding/base64'
 import { NotFoundError, ServerError } from './errors.ts'
 
@@ -56,10 +57,17 @@ export class CouchId {
 	}
 }
 
+export interface CouchDesignDoc {
+	id: string;
+	key: string;
+	value: string;
+	doc: CouchRecord;
+}
+
 export interface CouchDesignDocResponse {
 	total_rows: number;
 	offset: number;
-	rows: any[];
+	rows: CouchDesignDoc[];
 }
 
 export class Repository {
@@ -82,8 +90,7 @@ export class Repository {
 			items = items.slice(0, limit)
 		}
 
-		// @ts-ignore
-		return items.map(({ doc }) => doc)
+		return items.map(({ doc }: { doc: unknown }) => doc)
 	}
 
 	async getByTypeId(id: CouchId) {

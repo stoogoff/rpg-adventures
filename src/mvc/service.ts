@@ -1,3 +1,4 @@
+
 import { CouchId, CouchRecord, Repository } from './repository.ts'
 
 export class Service<T extends CouchRecord> {

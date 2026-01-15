@@ -6,10 +6,11 @@
 	"fmt": {
 		"bracePosition": "sameLineUnlessHanging",
 		"lineWidth": 80,
+		"newLineKind": "lf",
 		"semiColons": false,
 		"singleBodyPosition": "nextLine",
 		"singleQuote": true,
-		"spaceAround": false,
+		"spaceAround": true,
 		"spaceSurroundingProperties": false,
 		"useBraces": "always",
 		"useTabs": true

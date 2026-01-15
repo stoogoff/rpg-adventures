@@ -1,6 +1,5 @@
 
-import { Context, Router } from '@oak/oak'
-import { route, PageModel, View } from '~/mvc/index.ts'
+import { route, PageModel } from '~/mvc/index.ts'
 import { CampaignModel } from '../models/index.ts'
 import { CoreController } from './core-controller.ts'
 
@@ -19,7 +18,7 @@ export class CampaignsController extends CoreController {
 	@route('/campaigns/:campaign')
 	async byId() {
 		try {
-			//@ts-ignore
+			// @ts-ignore params does exist
 			const id = this.context?.params.campaign
 			const item = await this.campaigns.byId(id)
 			const system = await this.systems.byId(item.system)

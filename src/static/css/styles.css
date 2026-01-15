@@ -1,6 +1,7 @@
 
 @import url(reset.css);
 @import url(variables.css);
+@import url(debug.css);
 
 /* General tag styles */
 html, body {
@@ -77,8 +78,20 @@ dl {
 /* Evenly space grid */
 .grid {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
 	gap: var(--spacing-2);
+	grid-template-rows: auto;
+
+	@media screen and (min-width: 55em) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media screen and (min-width: 75em) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	@media screen and (min-width: 90em) {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }
 
 /* Summary cards */

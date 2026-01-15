@@ -82,12 +82,12 @@ export class SiteModel extends MetadataModel {
 		return url.href === this.url
 	}
 
-	override async toRaw(): Promise<Record<string, any>> {
+	override async toRaw(): Promise<Record<string, unknown>> {
 		const model = await super.toRaw()
 		const methods = ['imagePath', 'isActiveNav']
 
 		methods.forEach(method => {
-			//@ts-ignore
+			// @ts-ignore
 			model[method] = this[method].bind(this)
 		})
 
@@ -96,7 +96,7 @@ export class SiteModel extends MetadataModel {
 }
 
 export class PageModel extends MetadataModel {
-	constructor(metadata: Partial<SiteMetadata>, private data: any | any[] | undefined = undefined) {
+	constructor(metadata: Partial<SiteMetadata>, private data: unknown | unknown[] | undefined = undefined) {
 		super(metadata)
 	}
 
