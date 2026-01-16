@@ -23,11 +23,12 @@ export class AdventuresController extends CoreController {
 			const item = await this.adventures.byId(id)
 			const system = await this.systems.byId(item.system)
 			const campaign = await this.campaigns.forAdventure(item._id)
+			const characters = await this.characters.forAdventure(item._id)
 
 			return await this.render('adventures/item', new PageModel({
 					title: item.title + ' | ',
 				},
-				AdventureModel.fromDb(item, system, campaign),
+				AdventureModel.fromDb(item, system, campaign, characters),
 			))
 		}
 		catch(error) {

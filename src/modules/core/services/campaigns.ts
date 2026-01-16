@@ -1,5 +1,5 @@
 
-import { CouchId, CouchDesignDoc, Repository, Service } from '~/mvc/index.ts'
+import { CouchId, Repository, Service } from '~/mvc/index.ts'
 import { Campaign } from '../models/index.ts'
 
 export class CampaignsService extends Service<Campaign> {
@@ -9,11 +9,11 @@ export class CampaignsService extends Service<Campaign> {
 
 	async forAdventure(id: string): Promise<Campaign | null> {
 		const adventureId = new CouchId('adventure', id).toString()
-		const response = await this.repo.getView('campaigns', 'by-adventure')
-		const campaignId = response.rows.find(({ key }: CouchDesignDoc) => key === adventureId)
+		const response = await this.repo.getView<Campaign>('links', 'by-adventure', adventureId)
+		const record = response.rows.find(({ value }) => value === 'campaign')
 
-		if(campaignId) {
-			return await this.byId(campaignId.value)
+		if(record) {
+			return await this.byId(record.id)
 		}
 
 		return null

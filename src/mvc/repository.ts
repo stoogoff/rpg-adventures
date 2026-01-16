@@ -57,17 +57,17 @@ export class CouchId {
 	}
 }
 
-export interface CouchDesignDoc {
+export interface CouchDesignDoc<T extends CouchRecord> {
 	id: string;
 	key: string;
 	value: string;
-	doc: CouchRecord;
+	doc?: T;
 }
 
-export interface CouchDesignDocResponse {
+export interface CouchDesignDocResponse<T extends CouchRecord> {
 	total_rows: number;
 	offset: number;
-	rows: CouchDesignDoc[];
+	rows: CouchDesignDoc<T>[];
 }
 
 export class Repository {
@@ -104,13 +104,23 @@ export class Repository {
 		return item
 	}
 
-	async getView(designDoc: string, view: string): Promise<CouchDesignDocResponse> {
-		const path = `/_design/${designDoc}/_view/${view}`
+	async getView<T extends CouchRecord>(
+		designDoc: string,
+		view: string,
+		key?: string,
+		includeDocs: boolean = false
+	): Promise<CouchDesignDocResponse<T>> {
+		let path = `/_design/${designDoc}/_view/${view}?include_docs=${includeDocs}`
+
+		if(key) {
+			path += `&key="${key}"`
+		}
+
 		const response = await this.fetch(path)
 		const item = await response.json()
 
 		if('error' in item) {
-			throw new NotFoundError(`design doc ${path} not found`)
+			throw new NotFoundError(`design doc '${path}' not found`)
 		}
 
 		return item

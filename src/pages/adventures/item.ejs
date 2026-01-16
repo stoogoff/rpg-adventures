@@ -16,3 +16,16 @@
 </dl>
 
 <%~ it.format(it.data.summary) %>
+
+<h2>Characters</h2>
+<% if(it.data.characters) { %>
+<section class="grid">
+	<% it.data.characters.forEach(card => { %>
+		<%~ include('../components/card', {
+			card,
+		}) %>
+	<% }) %>
+</section>
+<% } else { %>
+	<p>No characters have been created for <em><%= it.data.title %></em> just yet.</p>
+<% } %>

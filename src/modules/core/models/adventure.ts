@@ -1,6 +1,7 @@
 
 import { CouchId, CouchRecord } from '~/mvc/index.ts'
 import { System, SystemModel } from './system.ts'
+import { Character, CharacterModel } from './character.ts'
 import { Campaign, CampaignModel } from './campaign.ts'
 
 export interface Adventure extends CouchRecord {
@@ -19,8 +20,14 @@ export class AdventureModel {
 	source: string = '';
 	system?: SystemModel | null;
 	campaign?: CampaignModel | null;
+	characters?: CharacterModel[] | null;
 
-	static fromDb(input: Adventure, system: System | null = null, campaign: Campaign | null = null) {
+	static fromDb(
+		input: Adventure,
+		system: System | null = null,
+		campaign: Campaign | null = null,
+		characters: Character[] | null = null,
+	) {
 		const model = new AdventureModel()
 		const id = CouchId.fromString(input._id)
 
@@ -36,6 +43,10 @@ export class AdventureModel {
 
 		if(campaign) {
 			model.campaign = CampaignModel.fromDb(campaign)
+		}
+
+		if(characters) {
+			model.characters = characters.map(character => CharacterModel.fromDb(character))
 		}
 
 		return model
