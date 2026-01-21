@@ -27,7 +27,7 @@ export class AdventureModel {
 		system: System | null = null,
 		campaign: Campaign | null = null,
 		characters: Character[] | null = null,
-	) {
+	): AdventureModel {
 		const model = new AdventureModel()
 		const id = CouchId.fromString(input._id)
 

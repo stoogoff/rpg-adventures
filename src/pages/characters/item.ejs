@@ -1,0 +1,28 @@
+<% layout('../layouts/main') %>
+
+<header>
+	<h1><%= it.data.title %></h1>
+	<% if(it.data.alias) { %><h2><%= it.data.alias %></h2><% } %>
+</header>
+<%~ it.format(it.data.summary) %>
+
+<% if(it.data.relationships) { %>
+<h2>Relationships</h2>
+<p>This character is related to the following other characters, which may be in the same or other adventures.</p>
+
+<ul class="disc">
+	<% it.data.relationships.forEach(rel => { %>
+		<li><a href="<%= rel.slug %>"><%= rel.title %></a> <em><%= rel.relationship %></em>.</li>
+	<% }) %>
+</ul>
+<% } %>
+
+<h2>Adventures</h2>
+<p><%= it.data.title %> appears in the following adventures.</p>
+<section class="grid">
+	<% it.data.adventures.forEach(card => { %>
+		<%~ include('../components/card', {
+			card,
+		}) %>
+	<% }) %>
+</section>

@@ -18,12 +18,17 @@ export class CharactersController extends Controller {
 			// @ts-ignore params does exist
 			const id = this.context?.params.character
 			const item = await this.characters.byId(id)
-			//const adventures = await this.adventures.forCharact(id)
+			const adventures = item.adventures.length
+				? await this.adventures.byIds(item.adventures)
+				: null
+			const characters = item.related_to && item.related_to.length
+				? await this.characters.byIds(item.related_to.map(({ id }) => id))
+				: null
 
 			return await this.render('characters/item', new PageModel({
 					title: item.title + ' | ',
 				},
-				CharacterModel.fromDb(item),
+				CharacterModel.fromDb(item, characters, adventures),
 			))
 		}
 		catch(error) {

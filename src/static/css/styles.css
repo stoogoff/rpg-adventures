@@ -51,6 +51,15 @@ dl {
 	grid-template-columns: var(--definition-width) auto;
 }
 
+ul.disc {
+	list-style-type: disc;
+	margin-left: var(--spacing-4);
+
+	li {
+		margin-bottom: var(--spacing-1);
+	}
+}
+
 /* Hide and show */
 .hidden {
 	display: none;
@@ -120,7 +129,7 @@ dl {
 }
 
 /* Site header */
-header {
+header#site-header {
 	background-color: var(--zinc-900);
 	border-bottom: 2px solid var(--zinc-950);
 	box-shadow: var(--shadow-lg);
@@ -244,6 +253,13 @@ nav {
 main {
 	margin-top: var(--spacing-header);
 	margin-right: var(--spacing-header);
+
+	header {
+		h2 {
+			margin-top: 0;
+			margin-bottom: var(--spacing-4);
+		}
+	}
 
 	h1 {
 		font-size: 2rem;

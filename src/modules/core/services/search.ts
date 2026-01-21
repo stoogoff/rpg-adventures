@@ -9,6 +9,7 @@ export class SearchService {
 		const results = await Promise.all([
 			this.repo.getAllByType('adventure'),
 			this.repo.getAllByType('campaign'),
+			this.repo.getAllByType('character'),
 			this.repo.getAllByType('system'),
 		])
 

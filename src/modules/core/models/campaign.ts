@@ -17,7 +17,7 @@ export class CampaignModel {
   system?: SystemModel | null
   adventures: AdventureModel[] = []
 
-  static fromDb(input: Campaign, system: System | null = null, adventures: Adventure[] = []) {
+  static fromDb(input: Campaign, system: System | null = null, adventures: Adventure[] = []): CampaignModel {
     const model = new CampaignModel()
     const id = CouchId.fromString(input._id)
 

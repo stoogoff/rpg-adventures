@@ -6,4 +6,4 @@ import { searchResults } from './store.js'
 directives.registerStore('searchResults', searchResults)
 
 directives.registerComponent('search', Search)
-directives.load(document.getElementById('header'), {})
+directives.load(document.getElementById('site-header'), {})
