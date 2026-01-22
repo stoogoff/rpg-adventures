@@ -17,5 +17,7 @@ function getIcon(icon) {
 	return ''
 }
 
+const size = it.size ?? 'md'
+
 %>
-<span class="icon"><%~ getIcon(it.icon) %></span>
+<span class="icon <%= size %>"><%~ getIcon(it.icon) %></span>
