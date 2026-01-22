@@ -13,14 +13,15 @@ export interface Adventure extends CouchRecord {
 }
 
 export class AdventureModel {
-	slug: string = '';
-	title: string = '';
-	summary: string = '';
-	setting: string = '';
-	source: string = '';
-	system?: SystemModel | null;
-	campaign?: CampaignModel | null;
-	characters?: CharacterModel[] | null;
+	icon = 'shield'
+	slug: string = ''
+	title: string = ''
+	summary: string = ''
+	setting: string = ''
+	source: string = ''
+	system?: SystemModel | null
+	campaign?: CampaignModel | null
+	characters?: CharacterModel[] | null
 
 	static fromDb(
 		input: Adventure,

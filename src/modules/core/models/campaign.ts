@@ -11,6 +11,7 @@ export interface Campaign extends CouchRecord {
 }
 
 export class CampaignModel {
+  icon = 'group'
   slug: string = ''
   title: string = ''
   summary: string = ''

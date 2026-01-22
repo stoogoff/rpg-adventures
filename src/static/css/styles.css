@@ -51,7 +51,7 @@ dl {
 	grid-template-columns: var(--definition-width) auto;
 }
 
-ul.disc {
+ul {
 	list-style-type: disc;
 	margin-left: var(--spacing-4);
 
@@ -71,10 +71,9 @@ ul.disc {
 /* Default icon size */
 .icon {
 	display: inline-block;
-	width: 1.5rem;
-	height: 1.5rem;
+	width: 1.3rem;
+	height: 1.3rem;
 	vertical-align: middle;
-	margin: var(--spacing-1);
 }
 
 /* Primary grid container with a small left-hand column and a large central column */
@@ -212,6 +211,11 @@ nav {
 		text-transform: uppercase;
 		margin-bottom: var(--spacing-2);
 		margin-left: var(--spacing-2);
+
+		.icon {
+			position: relative;
+			top: -2px;
+		}
 	}
 
 	menu {

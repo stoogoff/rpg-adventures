@@ -10,7 +10,7 @@
 <h2>Relationships</h2>
 <p>This character is related to the following other characters, which may be in the same or other adventures.</p>
 
-<ul class="disc">
+<ul>
 	<% it.data.relationships.forEach(rel => { %>
 		<li><a href="<%= rel.slug %>"><%= rel.title %></a> <em><%= rel.relationship %></em>.</li>
 	<% }) %>

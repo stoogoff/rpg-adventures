@@ -8,9 +8,9 @@ export interface Relationship {
 }
 
 export class RelationshipModel {
-	slug: string = '';
-	title: string = '';
-	relationship: string = '';
+	slug: string = ''
+	title: string = ''
+	relationship: string = ''
 
 	static fromDb(input: Character, relationship: string): RelationshipModel {
 		const model = new RelationshipModel()
@@ -33,10 +33,11 @@ export interface Character extends CouchRecord {
 }
 
 export class CharacterModel {
-	slug: string = '';
-	title: string = '';
-	alias: string = '';
-	summary: string = '';
+	icon = 'user'
+	slug: string = ''
+	title: string = ''
+	alias: string = ''
+	summary: string = ''
 	adventures: AdventureModel[] = []
 	relationships: RelationshipModel[] = []
 

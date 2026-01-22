@@ -1,4 +1,9 @@
-<h1><%= it.menu.title %></h1>
+<h1>
+	<%~ include('./icon', {
+		icon: it.menu.icon,
+	}) %>
+	<%= it.menu.title %>
+</h1>
 <menu>
 	<% it.menu.items.forEach(item => { %>
 		<li<%~ it.isActiveNav(item.slug) ? ' class="active"' : '' %>><a href="<%= item.slug %>"><%= item.title %></a></li>

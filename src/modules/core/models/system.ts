@@ -9,6 +9,7 @@ export interface System extends CouchRecord {
 }
 
 export class SystemModel {
+	icon = 'dice'
 	slug: string = ''
 	title: string = ''
 	summary: string = ''
