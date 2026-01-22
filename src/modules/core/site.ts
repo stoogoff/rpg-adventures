@@ -3,6 +3,11 @@ import { SiteModel, SiteMetadata } from '~/mvc/index.ts'
 import { format } from '~/utils/string.ts'
 import { AdventuresService, CampaignsService, SystemsService } from './services/index.ts'
 import { LinkModel } from './models/index.ts'
+import {
+	ICON_ADVENTURE,
+	ICON_CAMPAIGN,
+	ICON_SYSTEM,
+} from '~/utils/config.ts'
 
 export class CustomSiteModel extends SiteModel {
 	constructor(
@@ -16,21 +21,21 @@ export class CustomSiteModel extends SiteModel {
 	}
 
 	async adventures(): Promise<LinkModel[]> {
-		const list = await this._adventures.all()
+		const list = await this._adventures.latest()
 
-		return list.map(item => LinkModel.fromDb(item))
+		return list.map(item => LinkModel.fromDb(item, ICON_ADVENTURE))
 	}
 
 	async campaigns(): Promise<LinkModel[]> {
-		const list = await this._campaigns.all()
+		const list = await this._campaigns.latest()
 
-		return list.map(item => LinkModel.fromDb(item))
+		return list.map(item => LinkModel.fromDb(item, ICON_CAMPAIGN))
 	}
 
 	async systems(): Promise<LinkModel[]> {
-		const list = await this._systems.all()
+		const list = await this._systems.latest()
 
-		return list.map(item => LinkModel.fromDb(item))
+		return list.map(item => LinkModel.fromDb(item, ICON_SYSTEM))
 	}
 
 	format(input: string, length: number | null = null): string {

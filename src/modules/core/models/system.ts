@@ -1,6 +1,7 @@
 
 import { CouchId, CouchRecord } from '~/mvc/index.ts'
 import { Adventure, AdventureModel } from './adventure.ts'
+import { ICON_SYSTEM } from '~/utils/config.ts'
 
 export interface System extends CouchRecord {
   title: string;
@@ -9,7 +10,7 @@ export interface System extends CouchRecord {
 }
 
 export class SystemModel {
-	icon = 'dice'
+	icon = ICON_SYSTEM
 	slug: string = ''
 	title: string = ''
 	summary: string = ''

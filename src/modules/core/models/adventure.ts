@@ -3,6 +3,7 @@ import { CouchId, CouchRecord } from '~/mvc/index.ts'
 import { System, SystemModel } from './system.ts'
 import { Character, CharacterModel } from './character.ts'
 import { Campaign, CampaignModel } from './campaign.ts'
+import { ICON_ADVENTURE } from '~/utils/config.ts'
 
 export interface Adventure extends CouchRecord {
 	title: string;
@@ -13,7 +14,7 @@ export interface Adventure extends CouchRecord {
 }
 
 export class AdventureModel {
-	icon = 'shield'
+	icon = ICON_ADVENTURE
 	slug: string = ''
 	title: string = ''
 	summary: string = ''

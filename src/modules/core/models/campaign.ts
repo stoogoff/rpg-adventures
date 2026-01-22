@@ -2,6 +2,7 @@
 import { CouchId, CouchRecord } from '~/mvc/index.ts'
 import { Adventure, AdventureModel } from './adventure.ts'
 import { System, SystemModel } from './system.ts'
+import { ICON_CAMPAIGN } from '~/utils/config.ts'
 
 export interface Campaign extends CouchRecord {
   title: string;
@@ -11,7 +12,7 @@ export interface Campaign extends CouchRecord {
 }
 
 export class CampaignModel {
-  icon = 'group'
+  icon = ICON_CAMPAIGN
   slug: string = ''
   title: string = ''
   summary: string = ''
