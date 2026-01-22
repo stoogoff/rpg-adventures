@@ -119,6 +119,7 @@ table {
 	display: grid;
 	gap: var(--spacing-2);
 	grid-template-rows: auto;
+	max-width: var(--content-width);
 
 	@media screen and (min-width: 55em) {
 		grid-template-columns: repeat(2, 1fr);
@@ -126,10 +127,6 @@ table {
 
 	@media screen and (min-width: 75em) {
 		grid-template-columns: repeat(3, 1fr);
-	}
-
-	@media screen and (min-width: 90em) {
-		grid-template-columns: repeat(4, 1fr);
 	}
 }
 

@@ -5,13 +5,7 @@ import { searchResults } from './store.js'
 export default {
 	data: {
 		lastSearch: '',
-		hideResults: true,
-	},
-
-	computed: {
-		menuClass() {
-			return this.data.hideResults ? 'hidden' : ''
-		},
+		menuClass: 'hidden',
 	},
 
 	searchHandler(input) {
@@ -27,7 +21,7 @@ export default {
 			searchResults.empty()
 			searchResults.addRange(results)
 
-			this.data.hideResults = false
+			this.data.menuClass = ''
 		})
 
 		input = input.trim()
@@ -51,11 +45,9 @@ export default {
 		}
 	},
 
-	handleBlur(evt) {
-		const value = evt.srcElement.value
-
+	handleBlur() {
 		window.setTimeout(() => {
-			this.data.hideResults = true
+			this.data.menuClass = 'hidden'
 			this.data.lastSearch = ''
 		}, 250)
 	},
