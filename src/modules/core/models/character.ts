@@ -12,6 +12,7 @@ export class RelationshipModel {
 	title: string = ''
 	relationship: string = ''
 
+
 	static fromDb(input: Character, relationship: string): RelationshipModel {
 		const model = new RelationshipModel()
 		const id = CouchId.fromString(input._id)
@@ -40,6 +41,8 @@ export class CharacterModel {
 	summary: string = ''
 	adventures: AdventureModel[] = []
 	relationships: RelationshipModel[] = []
+	created: Date = new Date()
+	modified: Date = new Date()
 
 	static fromDb(input: Character, characters: Character[] | null = null, adventures: Adventure[] | null = null) {
 		const model = new CharacterModel()
@@ -49,6 +52,8 @@ export class CharacterModel {
 		model.title = input.title
 		model.alias = input.alias
 		model.summary = input.summary
+		model.created = new Date(input.created)
+		model.modified = new Date(input.modified)
 
 		if(input.related_to && characters) {
 			model.relationships = input.related_to.map(relationship => {

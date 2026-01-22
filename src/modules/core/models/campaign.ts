@@ -18,6 +18,8 @@ export class CampaignModel {
   summary: string = ''
   system?: SystemModel | null
   adventures: AdventureModel[] = []
+  created: Date = new Date()
+  modified: Date = new Date()
 
   static fromDb(input: Campaign, system: System | null = null, adventures: Adventure[] = []): CampaignModel {
     const model = new CampaignModel()
@@ -27,6 +29,8 @@ export class CampaignModel {
     model.title = input.title
     model.summary = input.summary
     model.adventures = adventures.map(adv => AdventureModel.fromDb(adv))
+    model.created = new Date(input.created)
+    model.modified = new Date(input.modified)
 
     if(system) {
       model.system = SystemModel.fromDb(system)

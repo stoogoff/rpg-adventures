@@ -23,6 +23,8 @@ export class AdventureModel {
 	system?: SystemModel | null
 	campaign?: CampaignModel | null
 	characters?: CharacterModel[] | null
+	created: Date = new Date()
+	modified: Date = new Date()
 
 	static fromDb(
 		input: Adventure,
@@ -38,6 +40,8 @@ export class AdventureModel {
 		model.summary = input.summary
 		model.setting = input.setting
 		model.source = input.source
+		model.created = new Date(input.created)
+		model.modified = new Date(input.modified)
 
 		if(system) {
 			model.system = SystemModel.fromDb(system)

@@ -68,6 +68,10 @@
 	--blue-800: oklch(42.4% 0.199 265.638);
 	--blue-900: oklch(37.9% 0.146 265.522);
 	--blue-950: oklch(28.2% 0.091 267.935);
+
+	--header-text: var(--zinc-300);
+	--header-bg: var(--zinc-900);
+	--header-border: var(--zinc-950);
 }
 
 @media (prefers-color-scheme: dark) {

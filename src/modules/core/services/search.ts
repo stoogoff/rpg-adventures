@@ -1,5 +1,11 @@
 
 import { Repository } from '~/mvc/index.ts'
+import {
+	TYPE_ADVENTURE,
+	TYPE_CAMPAIGN,
+	TYPE_CHARACTER,
+	TYPE_SYSTEM,
+} from '~/utils/config.ts'
 import { LinkModel } from '../models/index.ts'
 
 export class SearchService {
@@ -7,10 +13,10 @@ export class SearchService {
 
 	async search(term: string): Promise<LinkModel[]> {
 		const results = await Promise.all([
-			this.repo.getAllByType('adventure'),
-			this.repo.getAllByType('campaign'),
-			this.repo.getAllByType('character'),
-			this.repo.getAllByType('system'),
+			this.repo.getAllByType(TYPE_ADVENTURE),
+			this.repo.getAllByType(TYPE_CAMPAIGN),
+			this.repo.getAllByType(TYPE_CHARACTER),
+			this.repo.getAllByType(TYPE_SYSTEM),
 		])
 
 		return results
