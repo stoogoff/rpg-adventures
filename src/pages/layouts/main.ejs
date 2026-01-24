@@ -8,7 +8,9 @@
 
 <link rel="preconnect" href="https://fonts.bunny.net" />
 <link href="https://fonts.bunny.net/css?family=crimson-text:600|lato:400,700" rel="stylesheet" />
+<link rel="stylesheet" href="/css/variables.css" />
 <link rel="stylesheet" href="/css/styles.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
 
 <meta property="og:title" content="<%= it.title %>" />
 <meta property="og:type" content="<%= it.type %>" />
@@ -22,8 +24,8 @@
 </head>
 <body>
 
-<header id="site-header" class="container">
-	<span><a href="/">RPG Adventures</a></span>
+<header id="site-header">
+	<span id="logo"><a href="/">RPG Adventures</a></span>
 	<search data-q-component="search">
 		<form>
 			<input type="search" placeholder="Search..." data-q-blur="handleBlur" data-q-focus="handleFocus" data-q-keyup="handleKeyup" />

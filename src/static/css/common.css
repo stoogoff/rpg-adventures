@@ -1,0 +1,98 @@
+
+body {
+	font-family: var(--font-base);
+	background-color: var(--primary-bg);
+	color: var(--primary-text);
+}
+
+h1, h2, h3 {
+	font-family: var(--font-heading);
+}
+
+p {
+	font-size: 1rem;
+	line-height: var(--spacing-6);
+	max-width: var(--content-width);
+	margin-bottom: var(--spacing-4);
+}
+
+a {
+	text-decoration: none;
+	color: var(--link-text);
+
+	&:hover {
+		text-decoration: underline;
+		color: var(--link-text-hover);
+	}
+}
+
+strong, dt {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+dl {
+	margin-bottom: var(--spacing-4);
+	display: grid;
+	gap: var(--spacing-2);
+	grid-template-columns: var(--definition-width) auto;
+}
+
+ul {
+	list-style-type: disc;
+	margin-left: var(--spacing-4);
+
+	li {
+		margin-bottom: var(--spacing-1);
+	}
+}
+
+table {
+	thead tr {
+		background-color: var(--header-bg);
+		color: var(--header-text);
+		border-bottom: 1px solid var(--header-border);
+	}
+
+	th, td {
+		padding: var(--spacing-2);
+	}
+
+	th {
+		font-weight: bold;
+	}
+
+	tbody tr:nth-child(even) {
+		background-color: var(--tertiary-bg);
+		color: var(--tertiary-text);
+	}
+}
+
+/* Hide and show */
+.hidden {
+	display: none;
+}
+.invisble {
+	invisibility: hidden;
+}
+
+/* Default icon size */
+.icon {
+	display: inline-block;
+	width: 1.3rem;
+	height: 1.3rem;
+	vertical-align: middle;
+
+	&.sm {
+		width: 1rem;
+		height: 1rem;	
+	}
+
+	&.lg {
+		width: 1.8rem;
+		height: 1.8rem;
+	}
+}

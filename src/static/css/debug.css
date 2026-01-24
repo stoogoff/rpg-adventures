@@ -49,7 +49,7 @@
 	}
 }
 
-/* Extra large */
+/* X large */
 @media screen and (min-width: 75em) {
 	#responsive {
 		color: oklch(90.3% 0.076 319.62);
@@ -61,7 +61,7 @@
 	}
 }
 
-/* Extra large */
+/* XX large */
 @media screen and (min-width: 90em) {
 	#responsive {
 		color: oklch(89.9% 0.061 343.231);

@@ -1,6 +1,7 @@
 
 :root {
-	/* Screen sizes */
+	/* Screen sizes, minimum width to be considered in that category */
+	/* These don't actually work in media queries, unfortunately */
 	--screen-xsmall:  0em;
 	--screen-small:  25em;
 	--screen-medium: 36em;
