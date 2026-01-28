@@ -26,12 +26,8 @@ a {
 	}
 }
 
-strong, dt {
+dt {
 	font-weight: bold;
-}
-
-em {
-	font-style: italic;
 }
 
 dl {
@@ -42,12 +38,7 @@ dl {
 }
 
 ul {
-	list-style-type: disc;
 	margin-left: var(--spacing-4);
-
-	li {
-		margin-bottom: var(--spacing-1);
-	}
 }
 
 table {
