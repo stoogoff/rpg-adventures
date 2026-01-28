@@ -1,5 +1,18 @@
+<% console.log(it)%>
 <% layout('layouts/main') %>
 
 <h1>Home</h1>
 
 <p>Lorem ipsum etc</p>
+
+<form action="/post" method="post">
+	<div>
+		<label for="name">Name</label>
+		<input id="name" type="text" name="name" value="<%= it.data.name %>" />
+	</div>
+	<div>
+		<label for="age">Age</label>
+		<input id="age" type="text" name="age" value="<%= it.data.age %>" />
+	</div>
+	<button type="submit">Save</button>
+</form>

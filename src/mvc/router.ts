@@ -12,7 +12,7 @@ export function route(path: string, method: HttpMethod = 'get') {
 			router[method](path, async (context: Context) => {
 				(this as Controller).initialise(context)
 
-				// @ts-ignore
+				// @ts-ignore fecking typescript
 				context.response.body = await this[decorator.name]()
 			})
 		})

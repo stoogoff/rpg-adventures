@@ -21,6 +21,30 @@ export abstract class Controller {
 		return this.requestHasMimeType('application/xml')
 	}
 
+	async bodyData() {
+		if(!this.context) {
+			throw new ServerError('Context not set')
+		}
+
+		const type = this.context.request.body.type() ?? 'none'
+
+		switch(type) {
+			case 'form': {
+				const form = await this.context.request.body.formData()
+				const result = {}
+
+				form.keys().forEach(key => result[key] = form.get(key))
+
+				return result
+			}
+
+			case 'json':
+				return await this.context.request.body.json()
+		}
+
+		return null
+	}
+
 	requestHasMimeType(mime: string): boolean {
 		if(!this.context) return false
 
