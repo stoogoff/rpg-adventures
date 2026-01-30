@@ -64,7 +64,7 @@ header#site-header {
 			color: var(--header-text);
 
 			&:hover {
-				color: var(--zinc-100);
+				color: var(--header-text-hover);
 				text-decoration: none;
 			}
 		}
@@ -75,7 +75,7 @@ header#site-header {
 search {
 	position: relative;
 	top: var(--spacing-1);
-	color: var(--zinc-300);
+	color: var(--header-text);
 
 	input {
 		display: none;
@@ -89,7 +89,7 @@ search {
 		font-size: 1.1rem;
 
 		&:focus {
-			outline: 2px solid var(--link-text);
+			outline: 2px solid var(--tertiary-bg-hover);
 		}
 	}
 
@@ -128,6 +128,7 @@ nav {
 	display: none;
 
 	h1 {
+		color: var(--secondary-text-hover);
 		font-size: 1.1rem;
 		font-weight: bold;
 		text-transform: uppercase;
@@ -165,7 +166,7 @@ nav {
 		}
 
 		&.active {
-			border-left: 4px solid var(--link-text);
+			border-left: 4px solid var(--link-text-hover);
 			background-color: var(--secondary-bg-hover);
 
 			a:not(.link) {
