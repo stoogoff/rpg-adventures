@@ -78,12 +78,12 @@ table {
 	height: 1.3rem;
 	vertical-align: middle;
 
-	&.sm {
+	&.size-sm {
 		width: 1rem;
 		height: 1rem;	
 	}
 
-	&.lg {
+	&.size-lg {
 		width: 1.8rem;
 		height: 1.8rem;
 	}

@@ -25,11 +25,12 @@
 <body>
 
 <header id="site-header">
+	<span id="menu"><%~ include('../components/icon', { icon: 'bars' }) %></span>
 	<span id="logo"><a href="/">RPG Adventures</a></span>
 	<search data-q-component="search">
 		<form>
 			<input type="search" placeholder="Search..." data-q-blur="handleBlur" data-q-focus="handleFocus" data-q-keyup="handleKeyup" />
-			<%~ include('../components/icon', { icon: 'search' }) %>
+			<span id="search"><%~ include('../components/icon', { icon: 'search' }) %></span>
 			<menu data-q-store="searchResults" data-q-class="menuClass">
 				<li data-q-each="all">
 					<a data-q-href="slug" data-q-text="title"></a>

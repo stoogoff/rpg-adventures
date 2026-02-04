@@ -145,7 +145,7 @@
 		--tertiary-bg-hover: var(--slate-100);
 		--tertiary-border: var(--slate-400);
 
-		--link-text: var(--blue-700);
-		--link-text-hover: var(--blue-500);
+		--link-text: var(--amber-700);
+		--link-text-hover: var(--amber-500);
 	}
 }

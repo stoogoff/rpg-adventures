@@ -71,6 +71,12 @@ header#site-header {
 	}
 }
 
+/* Menu navigation */
+#menu {
+	margin: var(--spacing-1) var(--spacing-2);
+	cursor: pointer;
+}
+
 /* Global search */
 search {
 	position: relative;

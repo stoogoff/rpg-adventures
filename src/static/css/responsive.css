@@ -1,3 +1,35 @@
+/*
+--screen-xsmall:  0em;
+--screen-small:  25em;
+--screen-medium: 36em;
+--screen-large:  55em;
+--screen-xlarge: 75em;
+*/
+
+.sm, .md, .lg, .xl {
+	display: none;
+}
+
+@media screen and (min-width: 25em) {
+	.sm {
+		display: initial;
+	}
+}
+@media screen and (min-width: 36em) {
+	.md {
+		display: initial;
+	}
+}
+@media screen and (min-width: 55em) {
+	.lg {
+		display: initial;
+	}
+}
+@media screen and (min-width: 75em) {
+	.xl {
+		display: initial;
+	}
+}
 
 /* Medium */
 @media screen and (min-width: 36em) {
@@ -12,10 +44,14 @@
 		display: grid;
 		gap: var(--spacing-2);
 		grid-template-columns: var(--column-width) 3fr;
+	}
 
-		#logo a {
-			padding: var(--spacing-2);
-		}
+	#menu {
+		display: none;
+	}
+
+	#logo a {
+		padding: var(--spacing-2);
 	}
 
 	search {
