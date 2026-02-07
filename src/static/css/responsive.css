@@ -62,8 +62,15 @@
 		}
 	}
 
-	nav {
+	nav#primary {
+		z-index: 0;
+		position: static;
 		display: block;
+		transform: translateX(0);
+
+		&.active, &.inactive {
+			transform: translateX(0);
+		}
 	}
 
 	main {

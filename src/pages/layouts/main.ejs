@@ -25,7 +25,7 @@
 <body>
 
 <header id="site-header">
-	<span id="menu"><%~ include('../components/icon', { icon: 'bars' }) %></span>
+	<span id="menu" data-q-click="openMenu"><%~ include('../components/icon', { icon: 'bars' }) %></span>
 	<span id="logo"><a href="/">RPG Adventures</a></span>
 	<search data-q-component="search">
 		<form>
@@ -41,7 +41,7 @@
 </header>
 
 <div id="content" class="container">
-	<nav>
+	<nav id="primary">
 		<%~ include('../components/menu', {
 			menu: {
 				icon: 'dice',
