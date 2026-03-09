@@ -79,6 +79,12 @@ export abstract class Controller {
 		return await this.view.render(template, model.merge(urlModel) as PageModel)
 	}
 
+	renderStatus(status: number, message: string | undefined) {
+		this.context!.response.status = status
+
+		return message ?? ''
+	}
+
 	async renderError(error: any) {
 		let httpError: HttpError
 
@@ -90,7 +96,7 @@ export abstract class Controller {
 		}
 
 		this.context!.response.status = httpError.status
-			
+
 		if(this.isJsonRequest) {
 			this.context?.response.headers.set('Content-Type', 'application/json')
 

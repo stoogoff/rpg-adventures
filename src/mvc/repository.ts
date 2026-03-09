@@ -9,6 +9,11 @@ export interface CouchRecord {
 	modified: string;
 }
 
+export interface CouchInput {
+	_id: string;
+	_rev?: string;
+}
+
 export interface DbCredentials {
 	dbHost: string;
 	dbUser: string;
@@ -60,7 +65,7 @@ export class CouchId {
 export interface CouchDesignDoc<T extends CouchRecord> {
 	id: string;
 	key: string;
-	value: string;
+	value: string | number;
 	doc?: T;
 }
 
@@ -75,6 +80,14 @@ export class Repository {
 
 	constructor(private dbCredentials: DbCredentials) {
 		this.authHeader = 'Basic ' + encodeBase64(`${dbCredentials.dbUser}:${dbCredentials.dbPassword}`)
+	}
+
+	async create(data: CouchInput) {
+		return await this.put(`/${data._id}`, {
+			...data,
+			created: new Date().toISOString(),
+			modified: new Date().toISOString(),
+		})
 	}
 
 	async getAllByType(prefix: string, limit: number | false = false) {
@@ -124,6 +137,16 @@ export class Repository {
 		}
 
 		return item
+	}
+
+	private async put(url: string, data) {
+		return await fetch(this.dbCredentials.dbHost + url, {
+			method: 'put',
+			headers: {
+				Authorization: this.authHeader,
+			},
+			body: JSON.stringify(data)
+		})
 	}
 
 	private async fetch(url: string) {

@@ -2,20 +2,23 @@
 	"folders":
 	[
 		{
-			"path": "."
-		}
+			"path": ".",
+		},
+		{
+			"path": "/Users/stoo/Dev/auth"
+		},
 	],
 	"settings": {
 		"LSP": {
 			"LSP-typescript": {
-				"enabled": false
+				"enabled": false,
 			},
 			"Deno": {
 				"enabled": true,
 				"settings": {
-					"deno.config": "./deno.json"
-				}
-			}
-		}
-	}
+					"deno.config": "./deno.json",
+				},
+			},
+		},
+	},
 }
